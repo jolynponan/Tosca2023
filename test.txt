@@ -1,0 +1,88 @@
+RDP configuration check results
+
+Created: 2/6/2024 3:24:05 AM
+Type: All
+Hostname: PICL-B1Y1P93
+
+
+Required Settings
+-----------------
+
+Setting = "Use RDP connection" checkbox
+Location = "Unattended exection" tab in Tosca Distribution Agent Configuration form.
+Required value = Enabled
+Actual value = Disabled
+Result = Failed
+
+Setting = RDP Username input field
+Location = "Unattended exection" tab in Tosca Distribution Agent Configuration form.
+Required value = Valid username of a user who's an administrator or belongs to the Remote Desktop Users group.
+Actual value = Empty username input field
+Result = Failed
+
+Setting = RDP Enabled
+Location = Access via Remote Desktop Settings
+Required value = Enabled
+Actual value = Enabled
+Result = Passed
+
+Setting = Interactive logon: Message text for users attempting to logon
+Location = Access via secpol.msc
+Policy folder: Security Settings\Local Policies\Security Options
+Required value = Not Configured
+Actual value = Unauthorized access to this computer system and software is prohibited and access to this system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel. In the course of monitoring individuals improperly using this system, or in the case of system maintenance, the activities of authorized users may also be monitored. Anyone using this system expressly consents to such monitoring and is advised that if such monitoring reveals possible evidence of criminal activity, system personnel may provide the evidence of such monitoring to law enforcement officials.
+Result = Failed
+
+Setting = Interactive logon: Message title for users attempting to logon
+Location = Access via secpol.msc
+Policy folder: Security Settings\Local Policies\Security Options
+Required value = Not Configured
+Actual value = Legal Warning
+Result = Failed
+
+Setting = Always prompt for password upon connection
+Location = Access via gpedit.msc
+Policy folder: Computer Configuration\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Session Host\Security
+Required value = Disabled
+Actual value = Not Configured
+Result = Failed
+
+
+Environment-Dependent Settings (Optional)
+-----------------------------------------
+
+Setting = Interactive logon: Do not require CTRL+ALT+DEL
+Location = Access via secpol.msc
+Policy folder: Security Settings\Local Policies\Security Options
+Required value = Enabled
+Actual value = Not Configured
+Result = Failed
+
+Setting = Allow delegating Saved Credentials
+Location = Access via gpedit.msc
+Policy folder: Computer Configuration\Administrative Templates\System\Credentials Delegation
+Required value = Enabled, for server TERMSRV/*
+Actual value = Not Configured
+Result = Failed
+
+Setting = Allow delegating Saved Credentials with NTLM-only Server Authentication
+Location = Access via gpedit.msc
+Policy folder: Computer Configuration\Administrative Templates\System\Credentials Delegation
+Required value = Enabled, for server TERMSRV/*
+Actual value = Not Configured
+Result = Failed
+
+Setting = Do not allow passwords to be saved
+Location = Access via gpedit.msc
+Policy folder: Computer Configuration\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Connection Client
+Required value = Disabled
+Actual value = Not Configured
+Result = Failed
+
+Setting = Prompt for credentials on the client computer
+Location = Access via gpedit.msc
+Policy folder: Computer Configuration\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Connection Client
+Required value = Disabled
+Actual value = Not Configured
+Result = Failed
+
